@@ -27,8 +27,8 @@ Node *insert(Node *root, int data)
     else if (data > root->data)
     {
         root->right = insert(root->right, data);
-        return root;
     }
+    return root;
 }
 
 Node *search(Node *root, int key)
@@ -40,8 +40,8 @@ Node *search(Node *root, int key)
     if (key < root->data)
     {
         return search(root->left, key);
-        return search(root->right, key);
     }
+    return search(root->right, key);
 }
 
 void inorderTraversal(Node *root)

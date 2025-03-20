@@ -119,7 +119,7 @@ int main()
     printList();
     addInLast(12);
     printList();
-    addInLast(6);
+    addInLast(55);
     printList();
     insertAfterNode(0, 15);
     printList();
