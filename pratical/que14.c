@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 typedef struct node
 {
     int data;
@@ -17,21 +17,31 @@ Node *createNode(int data)
 Node *insert(Node *root, int data)
 {
     if (root == NULL)
+    {
         return createNode(data);
+    }
     if (data < root->data)
+    {
         root->left = insert(root->left, data);
+    }
     else if (data > root->data)
+    {
         root->right = insert(root->right, data);
-    return root;
+        return root;
+    }
 }
 
 Node *search(Node *root, int key)
 {
     if (root == NULL || root->data == key)
+    {
         return root;
+    }
     if (key < root->data)
+    {
         return search(root->left, key);
-    return search(root->right, key);
+        return search(root->right, key);
+    }
 }
 
 void inorderTraversal(Node *root)
@@ -60,9 +70,12 @@ int main()
     int key = 40;
     Node *found = search(root, key);
     if (found)
+    {
         printf("Element %d found in BST.\n", key);
+    }
     else
+    {
         printf("Element %d not found in BST.\n", key);
-
-    return 0;
+        return 0;
+    }
 }
